@@ -59,6 +59,6 @@ end
 execute 'initialize database' do
   command "mysql -h #{node['awesome_customers']['database']['host']} -u #{node['awesome_customers']['database']['username']} -p#{node['awesome_customers']['database']['password']} -D #{node['awesome_customers']['database']['dbname']} < #{node['awesome_customers']['database']['seed_file']}"
   # command "mysql -h #{node['awesome_customers']['database']['host']} -u #{node['awesome_customers']['database']['app']['username']} -p#{user_password_data_bag_item['password']} -D #{node['awesome_customers']['database']['dbname']} < #{node['awesome_customers']['database']['seed_file']}"
-  not_if  "mysql -h #{node['awesome_customers']['database']['host']} -u #{node['awesome_customers']['database']['username']} -p#{node['awesome_customers']['database']['app']['password']} -D #{node['awesome_customers']['database']['dbname']} -e 'describe customers;'"
+  # not_if  { "mysql -h #{node['awesome_customers']['database']['host']} -u #{node['awesome_customers']['database']['username']} -p#{node['awesome_customers']['database']['app']['password']} -D #{node['awesome_customers']['database']['dbname']} -e 'describe customers;'" }
   # not_if  "mysql -h #{node['awesome_customers']['database']['host']} -u #{node['awesome_customers']['database']['app']['username']} -p#{user_password_data_bag_item['password']} -D #{node['awesome_customers']['database']['dbname']} -e 'describe customers;'"
 end

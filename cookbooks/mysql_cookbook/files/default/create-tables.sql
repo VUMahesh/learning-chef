@@ -1,4 +1,4 @@
-CREATE TABLE customers(
+CREATE TABLE IF NOT EXISTS customers(
   id CHAR (32) NOT NULL,
   PRIMARY KEY(id),
   first_name VARCHAR(64),

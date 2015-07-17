@@ -1,0 +1,22 @@
+{
+  "name": "devenv",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[git]",
+    "recipe[mysql_cookbook]",
+    "recipe[java]",
+    "recipe[tomcat]",
+    "recipe[testwebapp]"
+  ],
+  "env_run_lists": {
+
+  }
+}
